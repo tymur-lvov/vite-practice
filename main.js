@@ -9,7 +9,7 @@ const getMarkupPartials = async (path) => {
 const concatMarkupPartials = async () => {
   const markup = [];
 
-  markup.push(await getMarkupPartials('/src/partials/html/partial1'));
+  markup.push(await getMarkupPartials('/vite-practice/src/partials/html/partial1'));
   markup.push(await getMarkupPartials('/src/partials/html/partial2'));
   markup.push(await getMarkupPartials('/src/partials/html/partial3'));
 
