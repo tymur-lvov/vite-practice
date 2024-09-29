@@ -36,4 +36,6 @@ const concatMarkupPartials = async () => {
   }
 };
 
-document.querySelector('#app').innerHTML = await concatMarkupPartials();
+document.addEventListener('DOMContentLoaded', async () => {
+  document.querySelector('#app').innerHTML = await concatMarkupPartials();
+});
