@@ -1,5 +1,5 @@
 import './style.css';
-console.log('Running script...')
+console.log('Running script...');
 
 const getMarkupPartials = async (path) => {
   try {
@@ -15,21 +15,9 @@ const concatMarkupPartials = async () => {
   try {
     const markup = [];
 
-    markup.push(
-      await getMarkupPartials(
-        'https://tymur-lvov.github.io/vite-practice/src/partials/html/partial1'
-      )
-    );
-    markup.push(
-      await getMarkupPartials(
-        'https://tymur-lvov.github.io/vite-practice/src/partials/html/partial2'
-      )
-    );
-    markup.push(
-      await getMarkupPartials(
-        'https://tymur-lvov.github.io/vite-practice/src/partials/html/partial3'
-      )
-    );
+    markup.push(await getMarkupPartials('./src/partials/html/partial1'));
+    markup.push(await getMarkupPartials('./src/partials/html/partial2'));
+    markup.push(await getMarkupPartials('./src/partials/html/partial3'));
 
     return markup.join('');
   } catch (error) {
