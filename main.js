@@ -16,4 +16,6 @@ const concatMarkupPartials = async () => {
   return markup.join('');
 };
 
+console.log(await concatMarkupPartials())
+
 document.querySelector('#app').innerHTML = await concatMarkupPartials();
