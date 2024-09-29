@@ -1,5 +1,6 @@
-import './style.css';
 console.log('Running script...');
+import './style.css';
+console.log('Import done!');
 
 const getMarkupPartials = async (path) => {
   try {
