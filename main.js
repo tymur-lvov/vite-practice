@@ -1,4 +1,5 @@
 import './style.css';
+console.log('Running script...')
 
 const getMarkupPartials = async (path) => {
   try {
