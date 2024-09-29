@@ -1,12 +1,10 @@
-console.log('Running script...');
 import './style.css';
-console.log('Import done!');
 
 const getMarkupPartials = async (path) => {
   try {
-    const data = await fetch(path);
-
-    return data.text();
+    const response = await fetch(path);
+    if (!response.ok) throw new Error('Network response was not ok');
+    return await response.text();
   } catch (error) {
     console.log(error.message);
   }
@@ -16,9 +14,9 @@ const concatMarkupPartials = async () => {
   try {
     const markup = [];
 
-    markup.push(await getMarkupPartials('./src/partials/html/partial1'));
-    markup.push(await getMarkupPartials('./src/partials/html/partial2'));
-    markup.push(await getMarkupPartials('./src/partials/html/partial3'));
+    markup.push(await getMarkupPartials('./src/partials/html/partial1.html'));
+    markup.push(await getMarkupPartials('./src/partials/html/partial2.html'));
+    markup.push(await getMarkupPartials('./src/partials/html/partial3.html'));
 
     return markup.join('');
   } catch (error) {
